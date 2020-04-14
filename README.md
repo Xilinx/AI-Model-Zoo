@@ -88,7 +88,7 @@ Model name: `F_M_D_H_W_(P)_C_V`
 For example, `cf_refinedet_coco_480_360_0.8_25G_1.1` is a `RefineDet` model trained with `Caffe` using `COCO` dataset, input data size is `480*360`, `80%` pruned, the computation per image is `25Gops` and Vitis AI version is `1.1`.
 
 
-### caffe-xilinx 
+### caffe-xilinx
 This is a custom distribution of caffe. Please use caffe-xilinx to test/finetune the caffe models listed in this page.
 
 **Note:** To download caffe-xlinx, visit [caffe-xilinx.zip](https://www.xilinx.com/bin/public/openDownload?filename=caffe-xilinx-1.1.zip)
@@ -171,9 +171,9 @@ Download and extract the model archive to your working area on the local hard di
 #### caffe Model Directory Structure
 For a caffe model, you should see the following directory structure:
 
-    ├── code                            # Contains code 
+    ├── code                            # Contains code
     │   ├── test                        # Contains test code which can run demo and evaluate model performance.
-    │   └── train                       # Contains training code 
+    │   └── train                       # Contains training code
     │                                     
     │                                   
     ├── readme.md                       # Contains the environment requirements, data preprocess and model information.
@@ -186,7 +186,7 @@ For a caffe model, you should see the following directory structure:
     │   ├── deploy.caffemodel           # Quantized weights, the output of vai_q_caffe without modification.
     │   ├── deploy.prototxt             # Quantized prototxt, the output of vai_q_caffe without modification.
     │   ├── quantized_test.prototxt     # Used to run evaluation with quantized_train_test.caffemodel on GPU
-    │   │                                 using python test code released in near future. Some models don't have this file 
+    │   │                                 using python test code released in near future. Some models don't have this file
     │   │                                 if they are converted from Darknet (Yolov2, Yolov3),
     │   │                                 Pytorch (ReID) or there is no Caffe Test (Densebox).                                 
     │   ├── quantized_train_test.caffemodel   # Quantized weights can be used for quantizeded-point training and evaluation.    
@@ -194,7 +194,7 @@ For a caffe model, you should see the following directory structure:
     │                                           on GPU when datalayer modified to user's data path.
     └── float                           
         ├── float.caffemodel            # Trained float-point weights.
-        ├── float.prototxt              # Modified test.prototxt as the input to vai_q_caffe along 
+        ├── float.prototxt              # Modified test.prototxt as the input to vai_q_caffe along
         │                                 with float.caffemodel. vai_q_caffe is Xilinx quantization tool
         │                                 which quantizes float-point to quantized-point model with minimal
         │                                 accuracy loss.
@@ -209,7 +209,7 @@ For a caffe model, you should see the following directory structure:
 For a Tensorflow model, you should see the following directory structure:
 
 
-    ├── code                            # Contains code 
+    ├── code                            # Contains code
     │   └── test                        # Contains test code which can run demo and evaluate model performance.
     │
     ├── readme.md                       # Contains the environment requirements, data preprocess and model information.
@@ -355,7 +355,7 @@ The following table lists the performance number including end-to-end throughput
 
 
 ### Performance on ZCU104
-Measured with Vitis AI 1.1 and Vitis AI Library 1.1 
+Measured with Vitis AI 1.1 and Vitis AI Library 1.1
 
 <details>
  <summary><b>Click here to view details</b></summary>
@@ -420,13 +420,13 @@ The following table lists the performance number including end-to-end throughput
 
 
 ### Performance on U50
-Measured with Vitis AI 1.1 and Vitis AI Library 1.1 
+Measured with Vitis AI 1.1 and Vitis AI Library 1.1
 
 <details>
  <summary><b>Click here to view details</b></summary>
 
 The following table lists the performance number including end-to-end throughput and latency for each model on the `Alveo U50` board with 6 DPUv3E kernels running at 250Mhz in Gen3x16:
-  
+
 
 | No\. | Model                      | Name                                         | E2E latency \(ms\) Thread num =1 | E2E throughput \-fps\(Single Thread\) | E2E throughput \-fps\(Multi Thread\) |
 | ---- | :------------------------- | :------------------------------------------- | -------------------------------- | ------------------------------------- | ------------------------------------ |
@@ -476,13 +476,13 @@ The following table lists the performance number including end-to-end throughput
 
 
 ### Performance on U200
-Measured with Vitis AI 1.1 and Vitis AI Library 1.1 
+Measured with Vitis AI 1.1 and Vitis AI Library 1.1
 
 <details>
  <summary><b>Click here to view details</b></summary>
 
 The following table lists the performance number including end-to-end throughput and latency for each model on the `Alveo U200` board with 2 DPUv1 kernels running at 350Mhz with xilinx_u200_xdma_201830_2 shell:
-  
+
 
 | No\. | Model                      | Name                                         | E2E latency \(ms\) Thread num =1 | E2E throughput \-fps\(Single Thread\) | E2E throughput \-fps\(Multi Thread\) |
 | ---- | :------------------------- | :------------------------------------------- | -------------------------------- | ------------------------------------- | ------------------------------------ |
@@ -500,20 +500,20 @@ The following table lists the performance number including end-to-end throughput
 </details>
 
 ### Performance on U250
-Measured with Vitis AI 1.1 and Vitis AI Library 1.1 
+Measured with Vitis AI 1.1 and Vitis AI Library 1.1
 
 <details>
  <summary><b>Click here to view details</b></summary>
 
 The following table lists the performance number including end-to-end throughput and latency for each model on the `Alveo U250` board with 4 DPUv1 kernels running at 350Mhz with xilinx_u250_xdma_201830_1 shell:
-  
+
 
 | No\. | Model                      | Name                                         | E2E latency \(ms\) Thread num =1 | E2E throughput \-fps\(Single Thread\) | E2E throughput \-fps\(Multi Thread\) |
 | ---- | :------------------------- | :------------------------------------------- | -------------------------------- | ------------------------------------- | ------------------------------------ |
 | 1    | resnet50                   | cf_resnet50_imagenet_224_224_7.7G            | 1.68                            | 595.5                                 | 1223.95                                 |
 | 2    | resnet18                   | cf_resnet18_imagenet_224_224_3.65G           | 1.67                             | 600.5                                 | 2422.5                               |
-| 3    | Inception_v1               | cf_inceptionv1_imagenet_224_224_3.16G        | 1.93                            | 517.1                                 | 2944.2                                 |
-| 4    | Inception_v2               | cf_inceptionv2_imagenet_224_224_4G           | 1.65                            | 607.8                                 | 23221                               |
+| 3    | Inception_v1               | cf_inceptionv1_imagenet_224_224_3.16G        | 1.93                            | 517.1                                 | 4059.8                                 |
+| 4    | Inception_v2               | cf_inceptionv2_imagenet_224_224_4G           | 1.65                            | 607.8                                 | 2327.1                               |
 | 5    | Inception_v3               | cf_inceptionv3_imagenet_299_299_11.4G        | 6.18                            | 161.8                                   | 743.8                               |
 | 6    | Inception_v4               | cf_inceptionv4_imagenet_299_299_24.5G        | 5.77                           | 173.4                                   | 452.4                                |
 | 7    | SqueezeNet                 | cf_squeeze_imagenet_227_227_0.76G            | 5.44                            | 183.7                                 | 2314.3                                 |
