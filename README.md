@@ -7,7 +7,7 @@
 
 # Notice
 
-This repository has been deprecated. For the latest models from Xilinx&reg; Vitis&trade; AI, visit [AI Model Zoo](https://github.com/Xilinx/Vitis-AI/tree/master/models/AI-Model-Zoo).
+This repository has been deprecated. For the latest models from Xilinx&reg; Vitis&trade; AI, visit [AI Model Zoo](https://github.com/Xilinx/Vitis-AI/tree/master/model_zoo).
 
 <hr/>
 <p align="center"><sup>Copyright&copy; 2021 Xilinx</sup></p>
